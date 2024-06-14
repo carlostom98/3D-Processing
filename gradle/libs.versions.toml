@@ -1,0 +1,44 @@
+[versions]
+agp = "8.4.0"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+sceneview = "2.2.1"
+compose = "1.5.2"
+compose-navigation = "2.7.7"
+compose-lifecycle = "2.7.7"
+compose-material3 = "1.2.0"
+
+[libraries]
+sceneview = { group = "io.github.sceneview", name = "sceneview", version.ref = "sceneview" }
+sceneview-ar = { group = "io.github.sceneview", name = "arsceneview", version.ref = "sceneview" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+compose = { group = "androidx.activity", name = "activity-compose", version.ref = "compose"}
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose"}
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "compose-material3" }
+compose-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose"}
+compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose"}
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation"}
+compose-rx = { group = "androidx.compose.runtime", name = "runtime-rxjava2", version.ref = "compose"}
+compose-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-lifecycle"}
+compose-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle"}
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
