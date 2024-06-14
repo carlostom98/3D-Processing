@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.Packaging
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -63,8 +61,8 @@ dependencies {
 
     // Compose
     implementation(libs.compose)
-    implementation(libs.compose.lifecycle.runtime)
-    implementation(libs.compose.lifecycle.viewmodel)
+//    implementation(libs.compose.lifecycle.runtime)
+//    implementation(libs.compose.lifecycle.viewmodel)
     implementation(libs.compose.rx)
     implementation(libs.compose.ui)
     implementation(libs.compose.tooling)
