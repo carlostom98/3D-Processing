@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.alisys.androidar.presenter.CustomizedThemes
 import com.google.ar.core.Frame
 import com.google.ar.core.TrackingFailureReason
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.sceneview.Scene
 import io.github.sceneview.ar.rememberARCameraNode
 import io.github.sceneview.collision.HitResult
@@ -46,6 +47,7 @@ import io.github.sceneview.rememberView
 
 private const val kModelFile = "models/gumball.glb"
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

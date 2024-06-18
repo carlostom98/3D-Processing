@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.dagger)
 }
 
 android {
@@ -61,13 +63,24 @@ dependencies {
 
     // Compose
     implementation(libs.compose)
-//    implementation(libs.compose.lifecycle.runtime)
-//    implementation(libs.compose.lifecycle.viewmodel)
     implementation(libs.compose.rx)
     implementation(libs.compose.ui)
     implementation(libs.compose.tooling)
     implementation(libs.compose.material3)
     implementation(libs.compose.navigation)
     implementation(libs.compose.livedata)
+
+    // Workmanager
+    implementation(libs.work.manager)
+
+    // Coil
+    implementation(libs.coil)
+
+    // Dagger Hilt
+    implementation(libs.dagger.hilt)
+    implementation(libs.hilt.viewmodel)
+    implementation(libs.hilt.navigation)
+    kapt(libs.kapt.hilt)
+    kapt(libs.kapt.dagger)
 
 }
