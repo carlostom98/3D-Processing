@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kapt)
-    alias(libs.plugins.dagger)
+    id ("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -44,6 +44,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.2"
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
@@ -78,8 +83,9 @@ dependencies {
 
     // Dagger Hilt
     implementation(libs.dagger.hilt)
-    implementation(libs.hilt.viewmodel)
+    //implementation(libs.hilt.viewmodel)
     implementation(libs.hilt.navigation)
+
     kapt(libs.kapt.hilt)
     kapt(libs.kapt.dagger)
 

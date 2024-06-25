@@ -55,6 +55,8 @@ class PhotoCompressionWorker(
 
     }
 
+
+
     companion object {
         const val KEY_CONTENT_URI = "KEY_CONTENT_URI"
         const val KEY_COMPRESSION_THRESHOLD = "KEY_COMPRESSION_THRESHOLD"

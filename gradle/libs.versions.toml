@@ -15,11 +15,11 @@ compose-navigation = "2.7.7"
 compose-lifecycle = "2.7.7"
 compose-material3 = "1.2.0"
 work-runtime = "2.9.0"
-coil = "2.48"
-dagger-hilt = "2.40.5"
+coil = "2.6.0"
+dagger-hilt = "2.51.1"
 hilt = "1.0.0"
 hilt-lifecycle = "1.0.0-alpha03"
-dagger-plugging = "2.44"
+dagger-plugging = "2.38"
 
 [libraries]
 sceneview = { group = "io.github.sceneview", name = "sceneview", version.ref = "sceneview" }
@@ -51,10 +51,10 @@ kapt-dagger = { group = "com.google.dagger", name = "hilt-android-compiler", ver
 kapt-hilt = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hilt" }
 hilt-viewmodel = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hilt-lifecycle" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt" }
+dagger-classpath = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "dagger-plugging" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-dagger = { id = "com.google.dagger.hilt.android", version.ref = "dagger-plugging" }
+dagger-plugin = { id = "dagger.hilt.android.plugin", version.ref = "dagger-plugging" }
 
