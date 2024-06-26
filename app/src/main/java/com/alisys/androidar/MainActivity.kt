@@ -1,42 +1,20 @@
 package com.alisys.androidar
 
-import android.content.Intent
-import android.graphics.BitmapFactory
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.unit.dp
-import androidx.work.Constraints
-import androidx.work.OneTimeWorkRequestBuilder
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.work.WorkManager
-import androidx.work.workDataOf
-import coil.compose.AsyncImage
 import com.alisys.androidar.presenter.CustomizedThemes
-import com.alisys.androidar.viewModels.PhotoViewModel
-import com.alisys.androidar.workmanager.PhotoCompressionWorker
-import dagger.hilt.EntryPoint
-import dagger.hilt.InstallIn
+import com.alisys.androidar.viewModels.TestDaggerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.sceneview.Scene
 import io.github.sceneview.collision.HitResult
@@ -57,12 +35,13 @@ import io.github.sceneview.rememberScene
 import io.github.sceneview.rememberView
 
 private const val kModelFile = "models/gumball.glb"
+private const val kModelFile2 = "models/archivo.glb"
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private lateinit var workManager: WorkManager
-    private val viewModel by viewModels<PhotoViewModel>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +49,7 @@ class MainActivity : ComponentActivity() {
         workManager = WorkManager.getInstance(applicationContext)
 
         setContent {
+  val viewModel = hiltViewModel<TestDaggerViewModel>()
             val darkMode = remember {
                 mutableStateOf(false)
             }
@@ -130,7 +110,7 @@ class MainActivity : ComponentActivity() {
                         modelLoader = modelLoader,
                         environmentLoader = environmentLoader,
                         collisionSystem = collisionSystem,
-                        isOpaque = false,
+                        isOpaque = true,
                         mainLightNode = rememberMainLightNode(engine = engine) {
                             intensity = 100_000.0f
                         },
@@ -145,7 +125,7 @@ class MainActivity : ComponentActivity() {
                                 ModelNode(
                                     // Load it from a binary .glb in the asset files
                                     modelInstance = modelLoader.createModelInstance(
-                                        assetFileLocation = kModelFile
+                                        assetFileLocation = kModelFile2
                                     ),
                                     scaleToUnits = 1.0f
                                 )
