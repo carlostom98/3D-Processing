@@ -1,4 +1,4 @@
-package com.alisys.androidar
+package com.androidar.example
 
 import android.os.Bundle
 import android.widget.Toast
@@ -17,9 +17,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.work.WorkManager
-import com.alisys.androidar.presenter.CustomizedThemes
+import com.androidar.example.presenter.CustomizedThemes
 import com.google.ar.core.ArCoreApk
-import com.google.ar.core.Config
 import com.google.ar.core.Session
 import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException
 import dagger.hilt.android.AndroidEntryPoint

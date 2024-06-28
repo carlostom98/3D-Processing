@@ -1,9 +1,9 @@
-package com.alisys.androidar.di
+package com.androidar.example.di
 
-import com.alisys.androidar.data.RequestAPIRetrofit
-import com.alisys.androidar.data.RestAPI
-import com.alisys.androidar.domain.IRepository
-import com.alisys.androidar.domain.Repository
+import com.androidar.example.data.RequestAPIRetrofit
+import com.androidar.example.data.RestAPI
+import com.androidar.example.domain.IRepository
+import com.androidar.example.domain.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

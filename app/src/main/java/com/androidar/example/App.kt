@@ -1,4 +1,4 @@
-package com.alisys.androidar
+package com.androidar.example
 
 import android.app.Application
 import android.widget.Toast

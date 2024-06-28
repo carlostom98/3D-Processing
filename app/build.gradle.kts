@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.alisys.androidar"
+    namespace = "com.androidar.example"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.alisys.androidar"
+        applicationId = "com.androidar.example"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -12,7 +12,7 @@
     <uses-feature android:name="android.hardware.camera.ar" />
 
     <application
-        android:name=".App"
+        android:name="com.androidar.example.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -23,7 +23,7 @@
         android:theme="@style/Theme.AndroidAR"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.androidar.example.MainActivity"
             android:exported="true"
             android:launchMode="singleTop">
             <intent-filter>

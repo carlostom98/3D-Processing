@@ -1,4 +1,4 @@
-package com.alisys.androidar.domain
+package com.androidar.example.domain
 
 interface IRepository {
     fun printAPI()

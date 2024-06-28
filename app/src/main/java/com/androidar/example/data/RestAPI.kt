@@ -1,4 +1,4 @@
-package com.alisys.androidar.data
+package com.androidar.example.data
 
 interface RestAPI {
     fun requestAPI()

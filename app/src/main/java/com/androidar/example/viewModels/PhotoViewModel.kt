@@ -1,4 +1,4 @@
-package com.alisys.androidar.viewModels
+package com.androidar.example.viewModels
 
 import android.graphics.Bitmap
 import android.net.Uri

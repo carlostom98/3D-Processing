@@ -1,4 +1,4 @@
-package com.alisys.androidar.presenter
+package com.androidar.example.presenter
 
 import androidx.compose.ui.graphics.Color
 
