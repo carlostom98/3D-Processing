@@ -1,6 +1,7 @@
 package com.alisys.androidar
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -20,6 +21,7 @@ import com.alisys.androidar.presenter.CustomizedThemes
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.Config
 import com.google.ar.core.Session
+import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException
 import dagger.hilt.android.AndroidEntryPoint
 
 private const val kModelFile = "models/gumball.glb"
@@ -29,6 +31,8 @@ private const val kModelFile2 = "models/archivo.glb"
 class MainActivity : ComponentActivity() {
 
     private lateinit var workManager: WorkManager
+    var mUserRequestedInstall = true
+    var mSession: Session ?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +75,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        requestPermission()
+    }
+
+
+
     private fun maybeEnableArButton(callback: (isAvailable: Boolean) -> Unit) {
         ArCoreApk.getInstance().checkAvailabilityAsync(this) { availability ->
             if (availability.isSupported) {
@@ -79,6 +90,39 @@ class MainActivity : ComponentActivity() {
                 callback(false)
             }
         }
+
+    }
+
+    private fun requestPermission() {
+        try {
+            if (mSession == null) {
+                when (ArCoreApk.getInstance().requestInstall(this, mUserRequestedInstall)) {
+                    ArCoreApk.InstallStatus.INSTALLED -> {
+                        // Success: Safe to create the AR session.
+                        mSession = Session(this)
+                    }
+
+                    ArCoreApk.InstallStatus.INSTALL_REQUESTED -> {
+                        // When this method returns `INSTALL_REQUESTED`:
+                        // 1. ARCore pauses this activity.
+                        // 2. ARCore prompts the user to install or update Google Play
+                        //    Services for AR (market://details?id=com.google.ar.core).
+                        // 3. ARCore downloads the latest device profile data.
+                        // 4. ARCore resumes this activity. The next invocation of
+                        //    requestInstall() will either return `INSTALLED` or throw an
+                        //    exception if the installation or update did not succeed.
+                        mUserRequestedInstall = false
+                        return
+                    }
+                }
+            }
+        } catch (e: UnavailableUserDeclinedInstallationException) {
+            // Display an appropriate message to the user and return gracefully.
+            Toast.makeText(this, "TODO: handle exception " + e, Toast.LENGTH_LONG)
+                .show()
+            return
+        }
+
 
     }
 
