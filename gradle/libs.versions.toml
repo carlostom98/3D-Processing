@@ -21,7 +21,7 @@ hilt = "1.0.0"
 hilt-lifecycle = "1.0.0-alpha03"
 hilt-compiler = "2.28-alpha"
 dagger-plugging = "2.38"
-core = "1.33.0"
+core = "1.44.0"
 
 [libraries]
 

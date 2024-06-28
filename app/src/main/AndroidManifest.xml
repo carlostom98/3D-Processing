@@ -37,8 +37,10 @@
             </intent-filter>
         </activity>
         <meta-data
+            tools:replace="android:value"
             android:name="com.google.ar.core"
-            android:value="required" />
+            android:value="required"
+            />
     </application>
 
 </manifest>

@@ -63,8 +63,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // SceneView & AR
-//    implementation(libs.sceneview)
-//    implementation(libs.sceneview.ar)
+    implementation(libs.sceneview)
+    implementation(libs.sceneview.ar)
     implementation(libs.arcore)
 
     // Compose

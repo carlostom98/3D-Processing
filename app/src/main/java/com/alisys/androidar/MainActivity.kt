@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
                 mutableStateOf(false)
             }
             var isAvailable by remember {
-                mutableStateOf(true)
+                mutableStateOf(false)
             }
 
             maybeEnableArButton() { available ->
@@ -72,7 +72,13 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun maybeEnableArButton(callback: (isAvailable: Boolean) -> Unit) {
-
+        ArCoreApk.getInstance().checkAvailabilityAsync(this) { availability ->
+            if (availability.isSupported) {
+                callback(true)
+            } else { // The device is unsupported or unknown.
+                callback(false)
+            }
+        }
 
     }
 
