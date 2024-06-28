@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id ("dagger.hilt.android.plugin")
+    id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
 }
 
@@ -62,9 +62,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // SceneView
-    implementation(libs.sceneview)
-    implementation(libs.sceneview.ar)
+    // SceneView & AR
+//    implementation(libs.sceneview)
+//    implementation(libs.sceneview.ar)
+    implementation(libs.arcore)
 
     // Compose
     implementation(libs.compose)
