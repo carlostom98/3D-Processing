@@ -86,7 +86,5 @@ dependencies {
     implementation(libs.dagger.hilt)
     implementation(libs.hilt.navigation)
     kapt(libs.kapt.hilt.compiler)
-    kapt(libs.kapt.hilt)
-    kapt(libs.kapt.dagger)
 
 }
