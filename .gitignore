@@ -13,5 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
+=======
+/newfolder/*
+>>>>>>> 931ab56474299d027df994743b1110f801f6299a
 !newfolder/.gitkeep
 newfolder/*
