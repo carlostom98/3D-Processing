@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/newfolder/new_file.txt
+newfolder/new_file.txt
